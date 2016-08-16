@@ -1,7 +1,9 @@
 Active Directory API
 ===================
 
-This ASP.NET WebAPI project returns information about users. It is the latest version of the AD API and has not been extensively tested.
+This ASP.NET WebAPI project returns information about users and groups. It can be used via a .NET client that is available via the GBC Nuget feed or by making AJAX requests direct to the service.
+
+Note: the app caches data from Active Directory so some AD changes may take a few hours to show in the data returned.
 
 ## Users
 
@@ -47,4 +49,4 @@ Returns an array of [IUser](https://github.com/GuildfordBC/activedirectory/blob/
 
 ### v1/services?IncludeXMT=`{true|false}`
 
-Returns a string array service units optionally including Corporate Management Team.
+Returns a string array service units optionally including Corporate Management Team. The list is maintained as a setting which can be managed via the `web.config` file.
