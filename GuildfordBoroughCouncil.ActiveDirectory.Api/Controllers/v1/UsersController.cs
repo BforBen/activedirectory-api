@@ -14,9 +14,9 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Controllers.v1
         [HttpGet]
         [Route("councillors")]
         [ResponseType(typeof(IEnumerable<User>))]
-        public IHttpActionResult Councillors(string term = null)
+        public IHttpActionResult Councillors(string q = null)
         {
-            return Ok(Lookup.Data.Councillors(term));
+            return Ok(Lookup.Data.Councillors(q));
         }
 
         [HttpGet]
