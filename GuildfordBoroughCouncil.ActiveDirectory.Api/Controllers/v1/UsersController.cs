@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup;
-using GuildfordBoroughCouncil.Linq;
 using System.Web.Http.Description;
 
 namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Controllers.v1
 {
     [AllowAnonymous]
-    [RoutePrefix("directory/v1/users")]
+    [RoutePrefix("v1/users")]
     public class UsersController : ApiController
     {
         [HttpGet]
@@ -51,7 +48,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Controllers.v1
                 var User = new User();
                 User.Name = q;
                 User.Title = "Click here if the user is not listed below.";
-                User.Office = String.Empty;
+                User.Office = string.Empty;
                 User.PhotoUrl = Properties.Settings.Default.NoPhotoImageUrl;
                 Users = Users.Concat(new User[] { User });
             }
@@ -64,7 +61,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Controllers.v1
         [ResponseType(typeof(User))]
         public IHttpActionResult Users(string id)
         {
-            if (!String.IsNullOrWhiteSpace(id))
+            if (!string.IsNullOrWhiteSpace(id))
             {
                 return Ok(Lookup.Data.Users(new string[] { id }).SingleOrDefault());
             }

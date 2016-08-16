@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup;
-using GuildfordBoroughCouncil.Linq;
 using System.Web.Http.Description;
 
 namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Controllers
 {
     [AllowAnonymous]
-    [RoutePrefix("directory/v1/groups")]
+    [RoutePrefix("v1/groups")]
     public class GroupController : ApiController
     {
         [HttpGet]

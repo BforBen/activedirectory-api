@@ -42,10 +42,10 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
         public Group(DirectoryEntry UserDirectoryEntry)
         {
             Name = (UserDirectoryEntry.Properties["displayName"].Value != null) ? UserDirectoryEntry.Properties["displayName"].Value.ToString() : UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString();
-            UserName = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? @"GUILDFORD\" + UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString() : String.Empty;
-            UserNameX = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString().ToLower() : String.Empty;
-            Email = (UserDirectoryEntry.Properties["mail"].Value != null) ? UserDirectoryEntry.Properties["mail"].Value.ToString() : String.Empty;
-            Description = (UserDirectoryEntry.Properties["description"].Value != null) ? UserDirectoryEntry.Properties["description"].Value.ToString() : String.Empty;
+            UserName = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? @"GUILDFORD\" + UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString() : string.Empty;
+            UserNameX = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString().ToLower() : string.Empty;
+            Email = (UserDirectoryEntry.Properties["mail"].Value != null) ? UserDirectoryEntry.Properties["mail"].Value.ToString() : string.Empty;
+            Description = (UserDirectoryEntry.Properties["description"].Value != null) ? UserDirectoryEntry.Properties["description"].Value.ToString() : string.Empty;
             PhotoUrl = (UserDirectoryEntry.Properties["extensionAttribute1"].Value != null) ? UserDirectoryEntry.Properties["extensionAttribute1"].Value.ToString() : Properties.Settings.Default.NoPhotoImageUrl;
         }
 
@@ -64,25 +64,25 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
         public User(DirectoryEntry UserDirectoryEntry)
         {
             Name = (UserDirectoryEntry.Properties["displayName"].Value != null) ? UserDirectoryEntry.Properties["displayName"].Value.ToString() : UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString();
-            FirstName = (UserDirectoryEntry.Properties["givenName"].Value != null) ? UserDirectoryEntry.Properties["givenName"].Value.ToString() : String.Empty;
-            LastName = (UserDirectoryEntry.Properties["sn"].Value != null) ? UserDirectoryEntry.Properties["sn"].Value.ToString() : String.Empty;
-            UserName = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? @"GUILDFORD\" + UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString() : String.Empty;
-            UserNameX = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString().ToLower() : String.Empty;
-            Department = (UserDirectoryEntry.Properties["department"].Value != null) ? UserDirectoryEntry.Properties["department"].Value.ToString() : String.Empty;
-            Office = (UserDirectoryEntry.Properties["physicalDeliveryOfficeName"].Value != null) ? UserDirectoryEntry.Properties["physicalDeliveryOfficeName"].Value.ToString() : String.Empty;
-            Title = (UserDirectoryEntry.Properties["title"].Value != null) ? UserDirectoryEntry.Properties["title"].Value.ToString() : String.Empty;
-            Email = (UserDirectoryEntry.Properties["mail"].Value != null) ? UserDirectoryEntry.Properties["mail"].Value.ToString() : String.Empty;
-            ManagerUserName = (UserDirectoryEntry.Properties["manager"].Value != null) ? UserDirectoryEntry.Properties["manager"].Value.ToString() : String.Empty;
+            FirstName = (UserDirectoryEntry.Properties["givenName"].Value != null) ? UserDirectoryEntry.Properties["givenName"].Value.ToString() : string.Empty;
+            LastName = (UserDirectoryEntry.Properties["sn"].Value != null) ? UserDirectoryEntry.Properties["sn"].Value.ToString() : string.Empty;
+            UserName = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? @"GUILDFORD\" + UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString() : string.Empty;
+            UserNameX = (UserDirectoryEntry.Properties["sAMAccountName"].Value != null) ? UserDirectoryEntry.Properties["sAMAccountName"].Value.ToString().ToLower() : string.Empty;
+            Department = (UserDirectoryEntry.Properties["department"].Value != null) ? UserDirectoryEntry.Properties["department"].Value.ToString() : string.Empty;
+            Office = (UserDirectoryEntry.Properties["physicalDeliveryOfficeName"].Value != null) ? UserDirectoryEntry.Properties["physicalDeliveryOfficeName"].Value.ToString() : string.Empty;
+            Title = (UserDirectoryEntry.Properties["title"].Value != null) ? UserDirectoryEntry.Properties["title"].Value.ToString() : string.Empty;
+            Email = (UserDirectoryEntry.Properties["mail"].Value != null) ? UserDirectoryEntry.Properties["mail"].Value.ToString() : string.Empty;
+            ManagerUserName = (UserDirectoryEntry.Properties["manager"].Value != null) ? UserDirectoryEntry.Properties["manager"].Value.ToString() : string.Empty;
             DirectReports = Utils.CountDirectReports(UserDirectoryEntry);
-            Telephone = (UserDirectoryEntry.Properties["telephoneNumber"].Value != null) ? UserDirectoryEntry.Properties["telephoneNumber"].Value.ToString() : String.Empty;
-            TelephoneXtn = (UserDirectoryEntry.Properties["telephoneNumber"].Value != null) ? UserDirectoryEntry.Properties["telephoneNumber"].Value.ToString().Replace(" ", String.Empty).Replace("01483444", "4").Replace("01483445", "5") : String.Empty;
+            Telephone = (UserDirectoryEntry.Properties["telephoneNumber"].Value != null) ? UserDirectoryEntry.Properties["telephoneNumber"].Value.ToString() : string.Empty;
+            TelephoneXtn = (UserDirectoryEntry.Properties["telephoneNumber"].Value != null) ? UserDirectoryEntry.Properties["telephoneNumber"].Value.ToString().Replace(" ", string.Empty).Replace("01483444", "4").Replace("01483445", "5") : string.Empty;
             PhotoUrl = (UserDirectoryEntry.Properties["extensionAttribute1"].Value != null) ? UserDirectoryEntry.Properties["extensionAttribute1"].Value.ToString() : Properties.Settings.Default.NoPhotoImageUrl;
 
-            if (!String.IsNullOrWhiteSpace(ManagerUserName))
+            if (!string.IsNullOrWhiteSpace(ManagerUserName))
             {
                 DirectoryEntry ManagersEntry = new DirectoryEntry("LDAP://" + ManagerUserName);
-                ManagerUserName = (ManagersEntry.Properties["sAMAccountName"].Value != null) ? @"GUILDFORD\" + ManagersEntry.Properties["sAMAccountName"].Value.ToString() : String.Empty;
-                ManagerUserNameX = (ManagersEntry.Properties["sAMAccountName"].Value != null) ? ManagersEntry.Properties["sAMAccountName"].Value.ToString().ToLower() : String.Empty;
+                ManagerUserName = (ManagersEntry.Properties["sAMAccountName"].Value != null) ? @"GUILDFORD\" + ManagersEntry.Properties["sAMAccountName"].Value.ToString() : string.Empty;
+                ManagerUserNameX = (ManagersEntry.Properties["sAMAccountName"].Value != null) ? ManagersEntry.Properties["sAMAccountName"].Value.ToString().ToLower() : string.Empty;
                 ManagersEntry.Close();
             }
         }
@@ -109,7 +109,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
     {
         internal static string CleanQuery(string query)
         {
-            return Regex.Replace(query ?? String.Empty, @"[^\w\s-]", String.Empty);
+            return Regex.Replace(query ?? string.Empty, @"[^\w\s-]", string.Empty);
         }
 
         internal static IEnumerable<User> FindMembersByOU(string query = null, string Path = null)
@@ -138,7 +138,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
                 }
             }
 
-            if (String.IsNullOrWhiteSpace(query))
+            if (string.IsNullOrWhiteSpace(query))
             {
                 return Members.OrderBy(u => u.LastName);
             }
@@ -179,7 +179,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
 
             var Users = new List<User>();
 
-            if (String.IsNullOrWhiteSpace(query) || query.Length < 2)
+            if (string.IsNullOrWhiteSpace(query) || query.Length < 2)
             {
                 return Users;
             }
@@ -210,7 +210,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
 
             var Users = new List<User>();
 
-            if (String.IsNullOrWhiteSpace(query) || query.Length < 1)
+            if (string.IsNullOrWhiteSpace(query) || query.Length < 1)
             {
                 return Users;
             }
@@ -302,7 +302,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
             DirectoryEntry UsersOu = new DirectoryEntry(Properties.Settings.Default.UserLdap);
             DirectorySearcher Search = new DirectorySearcher(UsersOu);
 
-            if (!String.IsNullOrWhiteSpace(username))
+            if (!string.IsNullOrWhiteSpace(username))
             {
                 Search.Filter = "(&(objectCategory=person)(objectClass=user)(sAMAccountName=" + username + "))";
 
@@ -355,7 +355,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
             {
                 foreach (var u in UserNames)
                 {
-                    if (!String.IsNullOrWhiteSpace(u))
+                    if (!string.IsNullOrWhiteSpace(u))
                     {
                         DirectorySearcher Search = new DirectorySearcher(Domain);
                         Search.Filter = "(&(objectCategory=person)(objectClass=user)(sAMAccountName=" + u + "))";
@@ -399,7 +399,7 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
 
             var Groups = new List<Group>();
 
-            if (String.IsNullOrWhiteSpace(query) || query.Length < 1)
+            if (string.IsNullOrWhiteSpace(query) || query.Length < 1)
             {
                 return Groups;
             }
@@ -429,12 +429,12 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Lookup
         
         public static IEnumerable<User> FindHeadsOfService(string query)
         {
-            return Lookup.Data.HeadsOfService().WhereIf(!String.IsNullOrWhiteSpace(query), u => u.Name.Contains(query) || u.Department.Contains(query) || u.Office.Contains(query) || u.Telephone.Contains(query) || u.Title.Contains(query));
+            return Lookup.Data.HeadsOfService().WhereIf(!string.IsNullOrWhiteSpace(query), u => u.Name.Contains(query) || u.Department.Contains(query) || u.Office.Contains(query) || u.Telephone.Contains(query) || u.Title.Contains(query));
         }
 
         public static IEnumerable<User> FindCouncillors(string query)
         {
-            return Lookup.Data.Councillors().WhereIf(!String.IsNullOrWhiteSpace(query), u => u.Name.Contains(query) || u.Department.Contains(query) || u.Office.Contains(query) || u.Telephone.Contains(query) || u.Title.Contains(query));
+            return Lookup.Data.Councillors().WhereIf(!string.IsNullOrWhiteSpace(query), u => u.Name.Contains(query) || u.Department.Contains(query) || u.Office.Contains(query) || u.Telephone.Contains(query) || u.Title.Contains(query));
         }
 
         public static IEnumerable<User> AllUsers()

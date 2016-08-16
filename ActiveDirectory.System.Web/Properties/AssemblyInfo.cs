@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ActiveDirectory.Api")]
+[assembly: AssemblyTitle("ActiveDirectory.System.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("Guildford Borough Council")]
-[assembly: AssemblyProduct("ActiveDirectory.Api")]
-[assembly: AssemblyCopyright("Copyright © Ben Cheetham 2012")]
+[assembly: AssemblyProduct("ActiveDirectory.System.Web")]
+[assembly: AssemblyCopyright("Copyright © Ben Cheetham 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -24,7 +24,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fc9d06f6-f1ec-4c0d-a3f0-ae3e05b53301")]
+[assembly: Guid("e06554dd-56ca-4d58-ab82-838e513289f2")]
 
 // Version information for an assembly consists of the following four values:
 //

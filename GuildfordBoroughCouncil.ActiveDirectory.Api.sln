@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildfordBoroughCouncil.ActiveDirectory.Api", "GuildfordBoroughCouncil.ActiveDirectory.Api\GuildfordBoroughCouncil.ActiveDirectory.Api.csproj", "{F7C86E17-F062-483E-A904-939B39563033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveDirectory.System.Web", "ActiveDirectory.System.Web\ActiveDirectory.System.Web.csproj", "{E06554DD-56CA-4D58-AB82-838E513289F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F7C86E17-F062-483E-A904-939B39563033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7C86E17-F062-483E-A904-939B39563033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7C86E17-F062-483E-A904-939B39563033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E06554DD-56CA-4D58-AB82-838E513289F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E06554DD-56CA-4D58-AB82-838E513289F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E06554DD-56CA-4D58-AB82-838E513289F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E06554DD-56CA-4D58-AB82-838E513289F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
