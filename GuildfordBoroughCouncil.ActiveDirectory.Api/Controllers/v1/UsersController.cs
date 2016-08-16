@@ -22,9 +22,9 @@ namespace GuildfordBoroughCouncil.ActiveDirectory.Api.Controllers.v1
         [HttpGet]
         [Route("heads-of-service")]
         [ResponseType(typeof(IEnumerable<User>))]
-        public IHttpActionResult HeadsOfService(string term = null)
+        public IHttpActionResult HeadsOfService(string q = null)
         {
-            return Ok(Lookup.Data.FindHeadsOfService(term));
+            return Ok(Lookup.Data.FindHeadsOfService(q));
         }
 
         [HttpGet]
